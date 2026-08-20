@@ -212,4 +212,85 @@ body {
         margin-top: 25px;
     }
 }
+/* Smart Email Generator */
+
+.email-tool {
+    grid-column: 1 / -1;
+}
+
+.email-tool label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #374151;
+}
+
+.email-tool textarea {
+    width: 100%;
+    min-height: 110px;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    resize: vertical;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.email-tool select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+}
+
+.email-tool textarea:focus,
+.email-tool select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.email-tool .feature-button {
+    margin-top: 18px;
+}
+
+.loading {
+    margin-top: 15px;
+    padding: 12px;
+    background: #eff6ff;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-box {
+    margin-top: 20px;
+    padding: 18px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.result-box h4 {
+    margin-bottom: 10px;
+}
+
+.result-box p {
+    color: #4b5563;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.ai-disclaimer {
+    margin-top: 15px;
+    font-size: 11px;
+    color: #6b7280;
+}
+
 
