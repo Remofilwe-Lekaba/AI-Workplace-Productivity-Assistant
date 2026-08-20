@@ -55,15 +55,69 @@
 
                 <div class="feature-grid">
 
-                    <div class="feature-card">
-                        <div class="icon">✉️</div>
-                        <h3>Smart Email Generator</h3>
-                        <p>
-                            Generate clear and professional emails based on your
-                            audience and preferred tone.
-                        </p>
-                        <button class="feature-button">Open Tool</button>
-                    </div>
+                   <div class="feature-card email-tool">
+    <div class="icon">✉️</div>
+
+    <h3>Smart Email Generator</h3>
+
+    <p>
+        Generate clear and professional emails based on your
+        audience and preferred tone.
+    </p>
+
+    <label for="email-purpose">What is the email about?</label>
+
+    <textarea
+        id="email-purpose"
+        placeholder="Example: Request a meeting with my manager to discuss my project progress."
+    ></textarea>
+
+    <label for="email-audience">Audience</label>
+
+    <select id="email-audience">
+        <option value="manager">Manager</option>
+        <option value="client">Client</option>
+        <option value="colleague">Colleague</option>
+        <option value="team">Team</option>
+    </select>
+
+    <label for="email-tone">Tone</label>
+
+    <select id="email-tone">
+        <option value="professional">Professional</option>
+        <option value="formal">Formal</option>
+        <option value="friendly">Friendly</option>
+        <option value="concise">Concise</option>
+    </select>
+
+    <button id="generate-email" class="feature-button">
+        Generate Email
+    </button>
+
+    <div id="email-loading" class="loading hidden">
+        Generating your email...
+    </div>
+
+    <div id="email-result" class="result-box">
+        <h4>Generated Email</h4>
+        <p id="email-output">
+            Your AI-generated email will appear here.
+        </p>
+    </div>
+
+    <p class="ai-disclaimer">
+        AI-generated content may require human review.
+    </p>
+</div>
+ 
+                        
+                        
+                    
+                            
+                    
+                        
+                        
+                    
 
                     <div class="feature-card">
                         <div class="icon">📝</div>
