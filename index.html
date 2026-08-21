@@ -299,9 +299,16 @@ Review team submissions."
         placeholder="Example: How can I organise my workday more effectively?"
     ></textarea>
 
-    <button id="chat-button" class="feature-button">
-        Send Message
-    </button>
+    <button
+    id="chat-button"
+    type="button"
+    class="feature-button"
+    onclick="document.getElementById('chat-output').textContent = 'AI Assistant Response Thank you for your question.\n\nHere is a practical approach:\n• Break the task into clear steps.\n• Prioritise the most important action first.\n• Set a realistic timeframe for completing the work.\n\nSuggested Next Step:\nStart with the most important action related to your question.';"
+>
+    Send Message
+</button>
+        
+    
 
     <div id="chat-loading" class="loading hidden">
         Thinking...
