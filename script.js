@@ -1,12 +1,15 @@
 // AI Workplace Productivity Assistant
-// Main application JavaScript
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    // ==============================
+    // Sidebar Navigation
+    // ==============================
+
     const navItems = document.querySelectorAll(".nav-item");
 
-    // Sidebar navigation
     navItems.forEach((item) => {
+
         item.addEventListener("click", () => {
 
             navItems.forEach((nav) => {
@@ -14,17 +17,33 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             item.classList.add("active");
+
         });
+
     });
 
 
+    // ==============================
     // Smart Email Generator
-    const generateEmailButton = document.getElementById("generate-email");
-    const emailPurpose = document.getElementById("email-purpose");
-    const emailAudience = document.getElementById("email-audience");
-    const emailTone = document.getElementById("email-tone");
-    const emailLoading = document.getElementById("email-loading");
-    const emailOutput = document.getElementById("email-output");
+    // ==============================
+
+    const generateEmailButton =
+        document.getElementById("generate-email");
+
+    const emailPurpose =
+        document.getElementById("email-purpose");
+
+    const emailAudience =
+        document.getElementById("email-audience");
+
+    const emailTone =
+        document.getElementById("email-tone");
+
+    const emailLoading =
+        document.getElementById("email-loading");
+
+    const emailOutput =
+        document.getElementById("email-output");
 
 
     if (generateEmailButton) {
@@ -37,27 +56,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             if (!purpose) {
+
                 emailOutput.textContent =
                     "Please enter what you would like the email to be about.";
+
                 return;
             }
 
 
-            // Show loading state
             emailLoading.classList.remove("hidden");
+
             emailOutput.textContent = "";
 
 
-            // Prototype response
             setTimeout(() => {
 
                 emailLoading.classList.add("hidden");
 
+
                 const audienceName =
-                    audience.charAt(0).toUpperCase() + audience.slice(1);
+                    audience.charAt(0).toUpperCase() +
+                    audience.slice(1);
+
 
                 const toneName =
-                    tone.charAt(0).toUpperCase() + tone.slice(1);
+                    tone.charAt(0).toUpperCase() +
+                    tone.slice(1);
 
 
                 emailOutput.textContent =
@@ -86,12 +110,23 @@ Tone: ${toneName}`;
 
     }
 
-});
- // Meeting Notes Summarizer
-    const summarizeMeetingButton = document.getElementById("summarize-meeting");
-    const meetingNotes = document.getElementById("meeting-notes");
-    const meetingLoading = document.getElementById("meeting-loading");
-    const meetingOutput = document.getElementById("meeting-output");
+
+    // ==============================
+    // Meeting Notes Summarizer
+    // ==============================
+
+    const summarizeMeetingButton =
+        document.getElementById("summarize-meeting");
+
+    const meetingNotes =
+        document.getElementById("meeting-notes");
+
+    const meetingLoading =
+        document.getElementById("meeting-loading");
+
+    const meetingOutput =
+        document.getElementById("meeting-output");
+
 
     if (summarizeMeetingButton) {
 
@@ -99,18 +134,25 @@ Tone: ${toneName}`;
 
             const notes = meetingNotes.value.trim();
 
+
             if (!notes) {
+
                 meetingOutput.textContent =
                     "Please paste your meeting notes before summarizing.";
+
                 return;
             }
 
+
             meetingLoading.classList.remove("hidden");
+
             meetingOutput.textContent = "";
+
 
             setTimeout(() => {
 
                 meetingLoading.classList.add("hidden");
+
 
                 meetingOutput.textContent =
 `Meeting Summary
@@ -135,4 +177,6 @@ This prototype summary is based only on the information provided by the user.`;
 
         });
 
-    }            
+    }
+
+});       
