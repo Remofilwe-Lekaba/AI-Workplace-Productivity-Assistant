@@ -281,15 +281,55 @@ Review team submissions."
                         
                     
 
-                    <div class="feature-card">
-                        <div class="icon">💬</div>
-                        <h3>AI Chatbot</h3>
-                        <p>
-                            Interact with an AI assistant to ask questions
-                            and get workplace support.
-                        </p>
-                        <button class="feature-button">Open Tool</button>
-                    </div>
+                    <div class="feature-card chatbot-tool">
+
+    <div class="icon">💬</div>
+
+    <h3>AI Chatbot Interface</h3>
+
+    <p>
+        Ask workplace questions and get practical AI assistance.
+    </p>
+
+    <label for="chat-input">Ask your workplace assistant</label>
+
+    <textarea
+        id="chat-input"
+        rows="6"
+        placeholder="Example: How can I organise my workday more effectively?"
+    ></textarea>
+
+    <button id="chat-button" class="feature-button">
+        Send Message
+    </button>
+
+    <div id="chat-loading" class="loading hidden">
+        Thinking...
+    </div>
+
+    <div id="chat-result" class="result-box">
+
+        <h4>AI Assistant</h4>
+
+        <p id="chat-output">
+            Your AI assistant response will appear here.
+        </p>
+
+    </div>
+
+    <p class="ai-disclaimer">
+        AI-generated content may require human review.
+    </p>
+
+</div>
+                        
+                        
+                        
+                            
+                            
+                        
+                        
+                    
 
                 </div>
 
