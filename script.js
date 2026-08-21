@@ -126,30 +126,77 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 // AI Research Assistant
 
-const researchButton =
-    document.getElementById("research-button");
+const researchButton = document.getElementById("research-button");
+const researchTopic = document.getElementById("research-topic");
+const researchLoading = document.getElementById("research-loading");
+const researchOutput = document.getElementById("research-output");
 
 if (researchButton) {
 
-    researchButton.addEventListener("click", function () {
+    researchButton.onclick = function () {
 
-        const topic =
-            document.getElementById("research-topic").value.trim();
+        const topic = researchTopic.value.trim();
 
-        const loading =
-            document.getElementById("research-loading");
-
-        const output =
-            document.getElementById("research-output");
-
-
-        if (!topic) {
-
-            output.textContent =
+        if (topic === "") {
+            researchOutput.textContent =
                 "Please enter a research topic before continuing.";
-
             return;
         }
+
+        researchLoading.classList.remove("hidden");
+        researchOutput.textContent = "";
+
+        setTimeout(function () {
+
+            researchLoading.classList.add("hidden");
+
+            researchOutput.textContent =
+                "Research Summary " +
+                "Topic: " +
+                topic +
+                " " +
+
+                "Key Insights: " +
+                "• The topic has been organised into key areas for understanding. " +
+                "• Important concepts should be reviewed and compared. " +
+                "• Relevant information should be verified using reliable sources. " +
+
+                "Important Considerations: " +
+                "• Consider the context in which the information will be applied. " +
+                "• Verify important facts before making decisions. " +
+
+                "Recommended Next Steps: " +
+                "• Review reliable sources related to the topic. " +
+                "• Compare information from multiple reliable sources. " +
+
+                "Verification Note: " +
+                "This prototype provides research support and should not replace verification using reliable sources.";
+
+        }, 1500);
+
+    };
+
+}
+    
+
+
+
+    
+
+        
+            
+
+        
+            
+
+
+        
+
+            
+                
+
+            
+        
 
 
         loading.classList.remove("hidden");
