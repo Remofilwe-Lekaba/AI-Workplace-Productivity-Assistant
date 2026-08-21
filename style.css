@@ -362,4 +362,39 @@ body {
 .research-tool .feature-button {
     margin-top: 18px;
 }
+/* AI Chatbot */
 
+.chatbot-tool {
+    grid-column: 1 / -1;
+}
+
+.chatbot-tool label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #374151;
+}
+
+.chatbot-tool textarea {
+    width: 100%;
+    min-height: 140px;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    resize: vertical;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background: white;
+    color: #111827;
+}
+
+.chatbot-tool textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.chatbot-tool .feature-button {
+    margin-top: 18px;
+}
