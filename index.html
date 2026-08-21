@@ -231,15 +231,55 @@ Review team submissions."
                         
                     
 
-                    <div class="feature-card">
-                        <div class="icon">🔎</div>
-                        <h3>AI Research Assistant</h3>
-                        <p>
-                            Get research insights, summaries and structured
-                            information on different topics.
-                        </p>
-                        <button class="feature-button">Open Tool</button>
-                    </div>
+                    <div class="feature-card research-tool">
+
+    <div class="icon">🔎</div>
+
+    <h3>AI Research Assistant</h3>
+
+    <p>
+        Get insights, summaries and organised research support.
+    </p>
+
+    <label for="research-topic">Enter your research topic</label>
+
+    <textarea
+        id="research-topic"
+        rows="8"
+        placeholder="Example: What are the benefits of AI in workplace productivity?"
+    ></textarea>
+
+    <button id="research-button" class="feature-button">
+        Research Topic
+    </button>
+
+    <div id="research-loading" class="loading hidden">
+        Researching your topic...
+    </div>
+
+    <div id="research-result" class="result-box">
+
+        <h4>Research Insights</h4>
+
+        <p id="research-output">
+            Your AI-generated research insights will appear here.
+        </p>
+
+    </div>
+
+    <p class="ai-disclaimer">
+        AI-generated content may require human review.
+    </p>
+
+</div>
+                        
+                        
+                        
+                            
+                            
+                        
+                        
+                    
 
                     <div class="feature-card">
                         <div class="icon">💬</div>
