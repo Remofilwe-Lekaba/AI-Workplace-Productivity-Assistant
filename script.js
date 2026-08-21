@@ -1,259 +1,128 @@
-// AI Workplace Productivity Assistant
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    // Sidebar Navigation
-    const navItems = document.querySelectorAll(".nav-item");
-
-    navItems.forEach((item) => {
-        item.addEventListener("click", () => {
-
-            navItems.forEach((nav) => {
-                nav.classList.remove("active");
-            });
-
-            item.classList.add("active");
-        });
-    });
-
+document.addEventListener("DOMContentLoaded", function () {
 
     // Smart Email Generator
+    const emailButton = document.getElementById("generate-email");
 
-    const generateEmailButton =
-        document.getElementById("generate-email");
+    if (emailButton) {
+        emailButton.addEventListener("click", function () {
 
-    const emailPurpose =
-        document.getElementById("email-purpose");
+            const purpose = document.getElementById("email-purpose").value.trim();
+            const audience = document.getElementById("email-audience").value;
+            const tone = document.getElementById("email-tone").value;
 
-    const emailAudience =
-        document.getElementById("email-audience");
-
-    const emailTone =
-        document.getElementById("email-tone");
-
-    const emailLoading =
-        document.getElementById("email-loading");
-
-    const emailOutput =
-        document.getElementById("email-output");
-
-
-    if (generateEmailButton) {
-
-        generateEmailButton.addEventListener("click", () => {
-
-            const purpose = emailPurpose.value.trim();
-
-            const audience = emailAudience.value;
-
-            const tone = emailTone.value;
-
+            const loading = document.getElementById("email-loading");
+            const output = document.getElementById("email-output");
 
             if (!purpose) {
-
-                emailOutput.textContent =
-                    "Please enter what you would like the email to be about.";
-
+                output.textContent = "Please enter what you would like the email to be about.";
                 return;
             }
 
+            loading.classList.remove("hidden");
+            output.textContent = "";
 
-            emailLoading.classList.remove("hidden");
+            setTimeout(function () {
 
-            emailOutput.textContent = "";
+                loading.classList.add("hidden");
 
-
-            setTimeout(() => {
-
-                emailLoading.classList.add("hidden");
-
-
-                const audienceName =
-                    audience.charAt(0).toUpperCase() +
-                    audience.slice(1);
-
-
-                const toneName =
-                    tone.charAt(0).toUpperCase() +
-                    tone.slice(1);
-
-
-                emailOutput.textContent =
-`Subject: Request Regarding Your Work
-
-Dear ${audienceName},
-
-I hope you are doing well.
-
-I am writing to discuss the following matter:
-
-${purpose}
-
-I would appreciate the opportunity to discuss this further and determine the appropriate next steps.
-
-Thank you for your time and consideration.
-
-Kind regards,
-[Your Name]
-
-Tone: ${toneName}`;
+                output.textContent =
+                    "Subject: Request Regarding Your Work " +
+                    "Dear " + audience + ", " +
+                    "I hope you are doing well. " +
+                    purpose + " " +
+                    "I would appreciate the opportunity to discuss this further. " +
+                    "Thank you for your time and consideration. " +
+                    "Kind regards, " +
+                    "[Your Name] " +
+                    "Tone: " + tone;
 
             }, 1500);
-
         });
-
     }
 
 
     // Meeting Notes Summarizer
+    const meetingButton = document.getElementById("summarize-meeting");
 
-    const summarizeMeetingButton =
-        document.getElementById("summarize-meeting");
+    if (meetingButton) {
+        meetingButton.addEventListener("click", function () {
 
-    const meetingNotes =
-        document.getElementById("meeting-notes");
+            const notes = document.getElementById("meeting-notes").value.trim();
 
-    const meetingLoading =
-        document.getElementById("meeting-loading");
-
-    const meetingOutput =
-        document.getElementById("meeting-output");
-
-
-    if (summarizeMeetingButton) {
-
-        summarizeMeetingButton.addEventListener("click", () => {
-
-            const notes = meetingNotes.value.trim();
-
+            const loading = document.getElementById("meeting-loading");
+            const output = document.getElementById("meeting-output");
 
             if (!notes) {
-
-                meetingOutput.textContent =
-                    "Please paste your meeting notes before summarizing.";
-
+                output.textContent = "Please paste your meeting notes before summarizing.";
                 return;
             }
 
+            loading.classList.remove("hidden");
+            output.textContent = "";
 
-            meetingLoading.classList.remove("hidden");
+            setTimeout(function () {
 
-            meetingOutput.textContent = "";
+                loading.classList.add("hidden");
 
-
-            setTimeout(() => {
-
-                meetingLoading.classList.add("hidden");
-
-
-                meetingOutput.textContent =
-`Meeting Summary
-
-Key Points:
-• The meeting discussion has been reviewed and organised.
-• Important topics from the provided notes have been identified.
-
-Decisions:
-• Review the decisions recorded in the original meeting notes.
-
-Action Items:
-• Follow up on the tasks discussed during the meeting.
-
-Deadlines:
-• Check the original meeting notes for specific deadlines.
-
-Note:
-This prototype summary is based only on the information provided by the user.`;
+                output.textContent =
+                    "Meeting Summary " +
+                    "Key Points: " +
+                    "• Important topics from the meeting have been identified. " +
+                    "Decisions: " +
+                    "• Review the decisions recorded in the meeting notes. " +
+                    "Action Items: " +
+                    "• Follow up on the tasks discussed. " +
+                    "Deadlines: " +
+                    "• Review the original notes for specific deadlines. " +
+                    "This prototype summary is based on the information provided.";
 
             }, 1500);
-
         });
-
     }
 
 
     // AI Task Planner
+    const taskButton = document.getElementById("plan-tasks");
 
-    const planTasksButton =
-        document.getElementById("plan-tasks");
+    if (taskButton) {
+        taskButton.addEventListener("click", function () {
 
-    const taskInput =
-        document.getElementById("task-input");
+            const tasks = document.getElementById("task-input").value.trim();
 
-    const taskLoading =
-        document.getElementById("task-loading");
-
-    const taskOutput =
-        document.getElementById("task-output");
-
-
-    if (planTasksButton) {
-
-        planTasksButton.addEventListener("click", () => {
-
-            const tasks = taskInput.value.trim();
-
+            const loading = document.getElementById("task-loading");
+            const output = document.getElementById("task-output");
 
             if (!tasks) {
-
-                taskOutput.textContent =
-                    "Please enter your tasks before creating a plan.";
-
+                output.textContent = "Please enter your tasks before creating a plan.";
                 return;
             }
 
+            loading.classList.remove("hidden");
+            output.textContent = "";
 
-            taskLoading.classList.remove("hidden");
+            setTimeout(function () {
 
-            taskOutput.textContent = "";
+                loading.classList.add("hidden");
 
-
-            setTimeout(() => {
-
-                taskLoading.classList.add("hidden");
-
-
-                taskOutput.textContent =
-`Task Priority Plan
-
-HIGH PRIORITY
-• Complete tasks with approaching deadlines first.
-• Address urgent workplace responsibilities.
-
-MEDIUM PRIORITY
-• Complete important tasks that do not have immediate deadlines.
-• Schedule time for preparation and follow-up work.
-
-LOW PRIORITY
-• Complete routine or less urgent tasks after higher-priority work.
-
-Recommended Order:
-1. Review all tasks and identify deadlines.
-2. Complete the most urgent task.
-3. Move to important tasks.
-4. Complete routine tasks.
-
-Suggested Schedule:
-
-Morning:
-• Focus on high-priority tasks.
-
-Afternoon:
-• Complete medium-priority tasks.
-
-End of Day:
-• Review progress and complete remaining routine tasks.
-
-Next Action:
-Start with the task that has the closest deadline or greatest urgency.
-
-Note:
-This prototype plan is based on the tasks provided by the user.`;
+                output.textContent =
+                    "Task Priority Plan " +
+                    "HIGH PRIORITY " +
+                    "• Complete tasks with approaching deadlines first. " +
+                    "MEDIUM PRIORITY " +
+                    "• Complete important tasks without immediate deadlines. " +
+                    "LOW PRIORITY " +
+                    "• Complete routine tasks after higher-priority work. " +
+                    "Recommended Order: " +
+                    "1. Review deadlines. " +
+                    "2. Complete the most urgent task. " +
+                    "3. Complete important tasks. " +
+                    "4. Complete routine tasks. " +
+                    "Next Action: " +
+                    "Start with the task that has the closest deadline or greatest urgency. " +
+                    "This prototype plan is based on the tasks provided.";
 
             }, 1500);
-
         });
-
     }
 
 });
