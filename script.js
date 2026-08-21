@@ -124,5 +124,72 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 1500);
         });
     }
+// AI Research Assistant
+
+const researchButton =
+    document.getElementById("research-button");
+
+if (researchButton) {
+
+    researchButton.addEventListener("click", function () {
+
+        const topic =
+            document.getElementById("research-topic").value.trim();
+
+        const loading =
+            document.getElementById("research-loading");
+
+        const output =
+            document.getElementById("research-output");
+
+
+        if (!topic) {
+
+            output.textContent =
+                "Please enter a research topic before continuing.";
+
+            return;
+        }
+
+
+        loading.classList.remove("hidden");
+
+        output.textContent = "";
+
+
+        setTimeout(function () {
+
+            loading.classList.add("hidden");
+
+
+            output.textContent =
+                "Research Summary " +
+
+                "Topic: " +
+                topic +
+                " " +
+
+                "Key Insights: " +
+                "• The topic has been organised into key areas for further understanding. " +
+                "• Important concepts should be reviewed and compared. " +
+                "• Relevant information should be verified using reliable sources. " +
+
+                "Important Considerations: " +
+                "• Consider the context in which the information will be applied. " +
+                "• Verify important facts before making workplace decisions. " +
+
+                "Recommended Next Steps: " +
+                "• Review reliable sources related to the topic. " +
+                "• Compare relevant information before drawing conclusions. " +
+
+                "Verification Note: " +
+                "This prototype provides research support and should not replace verification using reliable sources.";
+
+        }, 1500);
+
+    });
+
+}
+
 
 });
