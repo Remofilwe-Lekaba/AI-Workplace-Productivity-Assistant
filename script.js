@@ -238,5 +238,50 @@ if (researchButton) {
 
 }
 
+// AI Workplace Chatbot
 
+const chatButton = document.getElementById("chat-button");
+const chatInput = document.getElementById("chat-input");
+const chatLoading = document.getElementById("chat-loading");
+const chatOutput = document.getElementById("chat-output");
+
+if (chatButton) {
+
+    chatButton.onclick = function () {
+
+        const message = chatInput.value.trim();
+
+        if (message === "") {
+
+            chatOutput.textContent =
+                "Please enter a workplace question before sending.";
+
+            return;
+        }
+
+        chatLoading.classList.remove("hidden");
+        chatOutput.textContent = "";
+
+        setTimeout(function () {
+
+            chatLoading.classList.add("hidden");
+
+            chatOutput.textContent =
+                "AI Assistant Response " +
+                "Thank you for your question. " +
+                "Here is a practical approach: " +
+                "• Break the task into clear steps. " +
+                "• Prioritise the most important action first. " +
+                "• Set a realistic timeframe for completing the work. " +
+                "• Review the result before sharing or submitting it. " +
+                "Suggested Next Step: " +
+                "Start with the most important action related to your question and work through it step by step. " +
+                "Note: " +
+                "This prototype response is based on your workplace productivity request.";
+
+        }, 1500);
+
+    };
+
+}
 });
