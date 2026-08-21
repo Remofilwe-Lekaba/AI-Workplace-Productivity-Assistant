@@ -171,15 +171,60 @@
                         
                     
 
-                    <div class="feature-card">
-                        <div class="icon">✅</div>
-                        <h3>AI Task Planner</h3>
-                        <p>
-                            Organise tasks, identify priorities and create
-                            practical schedules.
-                        </p>
-                        <button class="feature-button">Open Tool</button>
-                    </div>
+         <div class="feature-card task-tool">
+
+    <div class="icon">✅</div>
+
+    <h3>AI Task Planner</h3>
+
+    <p>
+        Organise tasks, identify priorities and create
+        practical schedules.
+    </p>
+
+    <label for="task-input">Enter your tasks</label>
+
+    <textarea
+        id="task-input"
+        rows="8"
+        placeholder="Example:
+Complete project report by Friday.
+Reply to client emails.
+Prepare presentation for Monday's meeting.
+Review team submissions."
+    ></textarea>
+
+    <button id="plan-tasks" class="feature-button">
+        Plan My Tasks
+    </button>
+
+    <div id="task-loading" class="loading hidden">
+        Organising your tasks...
+    </div>
+
+    <div id="task-result" class="result-box">
+
+        <h4>Task Plan</h4>
+
+        <p id="task-output">
+            Your AI-generated task plan will appear here.
+        </p>
+
+    </div>
+
+    <p class="ai-disclaimer">
+        AI-generated content may require human review.
+    </p>
+
+</div>           
+                    
+                        
+                        
+                            
+                            
+                        
+                        
+                    
 
                     <div class="feature-card">
                         <div class="icon">🔎</div>
