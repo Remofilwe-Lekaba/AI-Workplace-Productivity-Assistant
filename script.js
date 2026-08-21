@@ -237,17 +237,17 @@ if (researchButton) {
     });
 
 }
-
 // AI Workplace Chatbot
 
 const chatButton = document.getElementById("chat-button");
-const chatInput = document.getElementById("chat-input");
-const chatLoading = document.getElementById("chat-loading");
-const chatOutput = document.getElementById("chat-output");
 
 if (chatButton) {
 
     chatButton.onclick = function () {
+
+        const chatInput = document.getElementById("chat-input");
+        const chatLoading = document.getElementById("chat-loading");
+        const chatOutput = document.getElementById("chat-output");
 
         const message = chatInput.value.trim();
 
@@ -284,4 +284,3 @@ if (chatButton) {
     };
 
 }
-});
