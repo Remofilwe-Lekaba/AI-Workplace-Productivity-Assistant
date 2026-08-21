@@ -87,4 +87,52 @@ Tone: ${toneName}`;
     }
 
 });
-            
+ // Meeting Notes Summarizer
+    const summarizeMeetingButton = document.getElementById("summarize-meeting");
+    const meetingNotes = document.getElementById("meeting-notes");
+    const meetingLoading = document.getElementById("meeting-loading");
+    const meetingOutput = document.getElementById("meeting-output");
+
+    if (summarizeMeetingButton) {
+
+        summarizeMeetingButton.addEventListener("click", () => {
+
+            const notes = meetingNotes.value.trim();
+
+            if (!notes) {
+                meetingOutput.textContent =
+                    "Please paste your meeting notes before summarizing.";
+                return;
+            }
+
+            meetingLoading.classList.remove("hidden");
+            meetingOutput.textContent = "";
+
+            setTimeout(() => {
+
+                meetingLoading.classList.add("hidden");
+
+                meetingOutput.textContent =
+`Meeting Summary
+
+Key Points:
+• The meeting discussion has been reviewed and organised.
+• Important topics from the provided notes have been identified.
+
+Decisions:
+• Review the decisions recorded in the original meeting notes.
+
+Action Items:
+• Follow up on the tasks discussed during the meeting.
+
+Deadlines:
+• Check the original meeting notes for specific deadlines.
+
+Note:
+This prototype summary is based only on the information provided by the user.`;
+
+            }, 1500);
+
+        });
+
+    }            
