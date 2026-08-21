@@ -119,15 +119,56 @@
                         
                     
 
-                    <div class="feature-card">
-                        <div class="icon">📝</div>
-                        <h3>Meeting Notes Summarizer</h3>
-                        <p>
-                            Turn lengthy meeting notes into key points,
-                            actions and deadlines.
-                        </p>
-                        <button class="feature-button">Open Tool</button>
-                    </div>
+                    <div class="feature-card meeting-tool">
+
+    <div class="icon">📝</div>
+
+    <h3>Meeting Notes Summarizer</h3>
+
+    <p>
+        Turn lengthy meeting notes into key points,
+        actions and deadlines.
+    </p>
+
+    <label for="meeting-notes">Paste your meeting notes</label>
+
+    <textarea
+        id="meeting-notes"
+        placeholder="Example: The team discussed the upcoming project deadline. Sarah will prepare the final report by Friday..."
+    ></textarea>
+
+    <button id="summarize-meeting" class="feature-button">
+        Summarize Meeting
+    </button>
+
+    <div id="meeting-loading" class="loading hidden">
+        Analysing meeting notes...
+    </div>
+
+    <div id="meeting-result" class="result-box">
+
+        <h4>Meeting Summary</h4>
+
+        <p id="meeting-output">
+            Your AI-generated meeting summary will appear here.
+        </p>
+
+    </div>
+
+    <p class="ai-disclaimer">
+        AI-generated content may require human review.
+    </p>
+
+</div>
+
+                        
+                        
+                        
+                            
+                            
+                        
+                        
+                    
 
                     <div class="feature-card">
                         <div class="icon">✅</div>
