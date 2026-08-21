@@ -233,10 +233,6 @@ if (researchButton) {
                 "This prototype provides research support and should not replace verification using reliable sources.";
 
         }, 1500);
-
-    });
-
-}
 // AI Workplace Chatbot
 
 const chatButton = document.getElementById("chat-button");
@@ -284,3 +280,7 @@ if (chatButton) {
     };
 
 }
+    });
+
+}
+
