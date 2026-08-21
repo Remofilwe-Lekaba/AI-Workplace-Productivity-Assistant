@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const purpose = document.getElementById("email-purpose").value.trim();
             const audience = document.getElementById("email-audience").value;
             const tone = document.getElementById("email-tone").value;
-
             const loading = document.getElementById("email-loading");
             const output = document.getElementById("email-output");
 
@@ -22,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
             output.textContent = "";
 
             setTimeout(function () {
-
                 loading.classList.add("hidden");
 
                 output.textContent =
@@ -48,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
         meetingButton.addEventListener("click", function () {
 
             const notes = document.getElementById("meeting-notes").value.trim();
-
             const loading = document.getElementById("meeting-loading");
             const output = document.getElementById("meeting-output");
 
@@ -61,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
             output.textContent = "";
 
             setTimeout(function () {
-
                 loading.classList.add("hidden");
 
                 output.textContent =
@@ -88,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
         taskButton.addEventListener("click", function () {
 
             const tasks = document.getElementById("task-input").value.trim();
-
             const loading = document.getElementById("task-loading");
             const output = document.getElementById("task-output");
 
@@ -101,7 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
             output.textContent = "";
 
             setTimeout(function () {
-
                 loading.classList.add("hidden");
 
                 output.textContent =
@@ -118,66 +112,95 @@ document.addEventListener("DOMContentLoaded", function () {
                     "3. Complete important tasks. " +
                     "4. Complete routine tasks. " +
                     "Next Action: " +
-                    "Start with the task that has the closest deadline or greatest urgency. " +
-                    "This prototype plan is based on the tasks provided.";
+                    "Start with the task that has the closest deadline or greatest urgency.";
 
             }, 1500);
         });
     }
-// AI Research Assistant
 
-const researchButton = document.getElementById("research-button");
-const researchTopic = document.getElementById("research-topic");
-const researchLoading = document.getElementById("research-loading");
-const researchOutput = document.getElementById("research-output");
 
-if (researchButton) {
+    // AI Research Assistant
+    const researchButton = document.getElementById("research-button");
 
-    researchButton.onclick = function () {
+    if (researchButton) {
+        researchButton.addEventListener("click", function () {
 
-        const topic = researchTopic.value.trim();
+            const topic = document.getElementById("research-topic").value.trim();
+            const loading = document.getElementById("research-loading");
+            const output = document.getElementById("research-output");
 
-        if (topic === "") {
-            researchOutput.textContent =
-                "Please enter a research topic before continuing.";
-            return;
-        }
+            if (!topic) {
+                output.textContent = "Please enter a research topic before continuing.";
+                return;
+            }
 
-        researchLoading.classList.remove("hidden");
-        researchOutput.textContent = "";
+            loading.classList.remove("hidden");
+            output.textContent = "";
 
-        setTimeout(function () {
+            setTimeout(function () {
+                loading.classList.add("hidden");
 
-            researchLoading.classList.add("hidden");
+                output.textContent =
+                    "Research Summary " +
+                    "Topic: " +
+                    topic + " " +
+                    "Key Insights: " +
+                    "• The topic has been organised into key areas for understanding. " +
+                    "• Important concepts should be reviewed and compared. " +
+                    "• Relevant information should be verified using reliable sources. " +
+                    "Important Considerations: " +
+                    "• Consider the context in which the information will be applied. " +
+                    "• Verify important facts before making decisions. " +
+                    "Recommended Next Steps: " +
+                    "• Review reliable sources related to the topic. " +
+                    "• Compare information from multiple reliable sources. " +
+                    "Verification Note: " +
+                    "This prototype provides research support and should not replace verification using reliable sources.";
 
-            researchOutput.textContent =
-                "Research Summary " +
-                "Topic: " +
-                topic +
-                " " +
+            }, 1500);
+        });
+    }
 
-                "Key Insights: " +
-                "• The topic has been organised into key areas for understanding. " +
-                "• Important concepts should be reviewed and compared. " +
-                "• Relevant information should be verified using reliable sources. " +
 
-                "Important Considerations: " +
-                "• Consider the context in which the information will be applied. " +
-                "• Verify important facts before making decisions. " +
+    // AI Workplace Chatbot
+    const chatButton = document.getElementById("chat-button");
 
-                "Recommended Next Steps: " +
-                "• Review reliable sources related to the topic. " +
-                "• Compare information from multiple reliable sources. " +
+    if (chatButton) {
+        chatButton.addEventListener("click", function () {
 
-                "Verification Note: " +
-                "This prototype provides research support and should not replace verification using reliable sources.";
+            const message = document.getElementById("chat-input").value.trim();
+            const loading = document.getElementById("chat-loading");
+            const output = document.getElementById("chat-output");
 
-        }, 1500);
+            if (!message) {
+                output.textContent = "Please enter a workplace question before sending.";
+                return;
+            }
 
-    };
+            loading.classList.remove("hidden");
+            output.textContent = "";
 
-}
-    
+            setTimeout(function () {
+                loading.classList.add("hidden");
+
+                output.textContent =
+                    "AI Assistant Response " +
+                    "Thank you for your question. " +
+                    "Here is a practical approach: " +
+                    "• Break the task into clear steps. " +
+                    "• Prioritise the most important action first. " +
+                    "• Set a realistic timeframe for completing the work. " +
+                    "• Review the result before sharing or submitting it. " +
+                    "Suggested Next Step: " +
+                    "Start with the most important action related to your question and work through it step by step. " +
+                    "Note: " +
+                    "This prototype response is based on your workplace productivity request.";
+
+            }, 1500);
+        });
+    }
+
+});
 
 
 
